@@ -37,8 +37,9 @@ rdoc --ri --op ri lib
 rdoc --op ../rdoc lib
 
 %install
-cd ruby
 rm -rf $RPM_BUILD_ROOT
+
+cd ruby
 ruby setup.rb install --prefix=$RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{ruby_rubylibdir},%{ruby_ridir}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
